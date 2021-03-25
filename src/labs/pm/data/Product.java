@@ -34,7 +34,7 @@ import static labs.pm.data.Rating.*;
  * @author sarahwang93
  */
 
- public abstract class Product {
+ public abstract class Product implements Rateable<Product>{
     /**
      * A constant that defines a {@link java.math.BigDecimal Bigdecimal} value
      * of the discount rate
@@ -99,6 +99,7 @@ import static labs.pm.data.Rating.*;
         return price.multiply(DISCOUNT_RATE).setScale(2, RoundingMode.HALF_UP);
     }
 
+    @Override
     public Rating getRating() {
         return rating;
     }
@@ -133,4 +134,6 @@ import static labs.pm.data.Rating.*;
     public int hashCode() {
         return Objects.hash(id);
     }
+
+
 }
