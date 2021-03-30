@@ -125,7 +125,7 @@ import static labs.pm.data.Rating.*;
         //if (o == null || getClass() != o.getClass()) return false;
         if(obj instanceof Product){
             final Product product = (Product) obj;
-            return id == product.id && name.equals(product.name);
+            return id == product.id;
         }
         return false;
     }
