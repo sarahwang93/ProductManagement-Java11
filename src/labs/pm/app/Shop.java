@@ -19,6 +19,7 @@ import labs.pm.data.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Locale;
 
@@ -33,17 +34,18 @@ public class Shop {
     public static void main(String[] args){
         ProductManager pm = new ProductManager("en-GB");
 
-        Product p1 = pm.createProduct(101, "Tea", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
+        pm.createProduct(101, "coffee", BigDecimal.valueOf(1.99), Rating.THREE_STAR);
         pm.printProductReport(101);
-        pm.reviewProduct(101, Rating.FOUR_STAR, "Nice hot cup of tea");
+        //pm.printProductReport(42);
+       /* pm.reviewProduct(42, Rating.FOUR_STAR, "Nice hot cup of tea");
         pm.reviewProduct(101, Rating.TWO_STAR, "Rather weak tea");
         pm.reviewProduct(101, Rating.FOUR_STAR, "Fine tea");
-        pm.reviewProduct(101, Rating.FOUR_STAR, "Good Tea");
         pm.reviewProduct(101, Rating.FIVE_STAR, "Perfect tea");
-        pm.reviewProduct(101, Rating.THREE_STAR, "Just add some lemon");
-        pm.printProductReport(101);
+        pm.reviewProduct(101, Rating.THREE_STAR, "Just add some lemon");*/
+        pm.createProduct(103, "cake",BigDecimal.valueOf(2.99), Rating.FIVE_STAR);
+        pm.printProductReport(103);
 
-        pm.changeLocale("ru-RU");
+        /*pm.changeLocale("ru-RU");
         Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.NOT_RATED);
         pm.reviewProduct(102, Rating.THREE_STAR, "Coffee was ok");
         pm.reviewProduct(102, Rating.ONE_STAR, "Where is the milk!?");
@@ -78,7 +80,7 @@ public class Shop {
 
         Comparator<Product> ratingSorter = (pro1, pro2) -> pro2.getRating().ordinal() - pro1.getRating().ordinal();
         //bigDecimal implemented compareTo
-        Comparator<Product> priceSorter = (pro1, pro2) -> pro2.getPrice().compareTo(pro1.getPrice());
+        Comparator<Product> priceSorter = (pro1, pro2) -> pro2.getPrice().compareTo(pro1.getPrice());*/
         //pm.printProducts(ratingSorter.thenComparing(priceSorter));
         //pm.printProducts(ratingSorter.thenComparing(priceSorter).reversed());
         /*Product p2 = pm.createProduct(102, "Coffee", BigDecimal.valueOf(1.99), Rating.FOUR_STAR);
@@ -106,5 +108,7 @@ public class Shop {
         System.out.println(p6);
         System.out.println(p7);
         System.out.println(p8);*/
+
+
     }
 }
